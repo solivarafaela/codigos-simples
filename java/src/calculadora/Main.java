@@ -2,12 +2,11 @@ package calculadora;
 
 import java.util.Scanner;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
 
         char operador;
-        float operandoUm, operandoDois, resultado = 0;
-        boolean isOperadorValido = true;
+        float operandoUm, operandoDois;
         boolean isExecutando = true;
 
         Scanner scanner = new Scanner(System.in);
@@ -21,11 +20,11 @@ public class main {
         operandoDois = scanner.nextFloat();
 
         switch (operador) {
-            case '+': System.out.println(calculadora.somar(operandoUm, operandoDois)); break;
-            case '-': System.out.println(calculadora.subtrair(operandoUm, operandoDois)); break;
-            case '*': System.out.println(calculadora.multiplicar(operandoUm, operandoDois)); break;
-            case '/': System.out.println(calculadora.dividir(operandoUm, operandoDois)); break;
-            default: System.out.println("Operador inválido!");
+            case '+' -> System.out.println(calculadora.somar(operandoUm, operandoDois));
+            case '-' -> System.out.println(calculadora.subtrair(operandoUm, operandoDois));
+            case '*' -> System.out.println(calculadora.multiplicar(operandoUm, operandoDois));
+            case '/' -> System.out.println(calculadora.dividir(operandoUm, operandoDois));
+            default -> System.out.println("Operador inválido!");
         }
 
         do {
@@ -42,11 +41,11 @@ public class main {
                 operandoDois = scanner.nextFloat();
 
                 switch (operador) {
-                    case '+': System.out.println(calculadora.somar(operandoUm, operandoDois)); break;
-                    case '-': System.out.println(calculadora.subtrair(operandoUm, operandoDois)); break;
-                    case '*': System.out.println(calculadora.multiplicar(operandoUm, operandoDois)); break;
-                    case '/': System.out.println(calculadora.dividir(operandoUm, operandoDois)); break;
-                    default: System.out.println("Operador inválido!");
+                    case '+' -> System.out.println(calculadora.somar(operandoUm, operandoDois));
+                    case '-' -> System.out.println(calculadora.subtrair(operandoUm, operandoDois));
+                    case '*' -> System.out.println(calculadora.multiplicar(operandoUm, operandoDois));
+                    case '/' -> System.out.println(calculadora.dividir(operandoUm, operandoDois));
+                    default -> System.out.println("Operador inválido!");
                 }
             }
         } while (isExecutando);
