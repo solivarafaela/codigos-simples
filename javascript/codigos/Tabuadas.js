@@ -1,8 +1,10 @@
+//Retorna a tabuada solicitada pelo usuário.
+
 var prompt = require('prompt-sync');
 var prompt = prompt();
 
 
-function retornarTabuada(numeroLimite, numero) {
+function retornarTabuada(numeroLimite, numero) { //Retorna tabuada solicitada.
     for (i = 0; i <= numeroLimite; i++) {
         console.log(numero + ' x ' + i + ' = ' + (numero * i))
     }
