@@ -4,7 +4,7 @@ var prompt = require('prompt-sync');
 var prompt = prompt();
 
 var consumoMedioCombustivel, quantidadeAtualCombustivel, distanciaViagem, valorCombustivel;
-var combustivelNecessario, deficitCombustivel, valorAbastecimentoNecessario;
+var combustivelNecessario, deficitCombustivel, valorNecessarioParaViajar;
 
 consumoMedioCombustivel = parseFloat(prompt('Informe o consumo médio de combustível do veículo (Km por litro): '));
 quantidadeAtualCombustivel = parseFloat(prompt('Informe quanto combustível há no tanque (Litros): '));
@@ -18,7 +18,7 @@ if (deficitCombustivel >= 0) {
     console.log('Boa viagem!');
 } else {
     valorCombustivel = parseFloat(prompt('Informe o valor do litro do combustível: '));
-    valorAbastecimentoNecessario = deficitCombustivel * valorCombustivel;
+    valorNecessarioParaViajar = deficitCombustivel * valorCombustivel;
     console.log('\nVocê precisa abastecer ' + (deficitCombustivel * (-1)) + ' litro(s) de combustível.'); //invertendo valor negativo.
-    console.log('O valor estimado é de: ' + (valorAbastecimentoNecessario * (-1)) + ' reais.'); //invertendo valor negativo.
+    console.log('O valor estimado é de: ' + (valorNecessarioParaViajar * (-1)) + ' reais.'); //invertendo valor negativo.
 }
