@@ -20,11 +20,11 @@ function calcularMedia(pontuacaoTotal, quantidadeNotas) { //Retorna o calculo da
 
 function retornarStatusAluno(media) { //Retorna o estado do aluno (Reprovado, Em recuperação ou Aprovado.)
     if (media < 5) {
-        console.log('Aluno reprovado.');
+        return 'Aluno reprovado.';
     } else if (media >= 5 && media < 7) {
-        console.log('Aluno em recuperação.');
+        return 'Aluno em recuperação.';
     } else {
-        console.log('Aluno aprovado.\n');
+        return 'Aluno aprovado.';
     }
 }
 
@@ -35,4 +35,4 @@ pontuacaoTotal = receberNotas(quantidadeNotas);
 media = calcularMedia(pontuacaoTotal, quantidadeNotas);
 
 console.log('\nA média das notas é de: ' + media.toFixed(1));
-retornarStatusAluno(media);
+console.log(retornarStatusAluno(media));
