@@ -1,24 +1,36 @@
 var prompt = require('prompt-sync');
 var prompt = prompt();
 
-var pontuacaoTotal = 0, media = 0;
 
+function receberNotas(quantidadeNotas) { //Recebe as notas e retorna a pontuação total.
+    for (i = 0; i < quantidadeNotas; i++) {
+        notaAtual = parseFloat(prompt('Insira a nota: '));
+        pontuacaoTotal = pontuacaoTotal + notaAtual;
+        console.log('Pontuação total: ' + pontuacaoTotal.toFixed(1));
+    }
+
+    return pontuacaoTotal;
+}
+
+function calcularMedia(pontuacaoTotal, quantidadeNotas) { //Retorna o calculo da média.
+    return media = (pontuacaoTotal / quantidadeNotas);
+}
+
+function retornarStatusAluno(media) { //Retorna o estado do aluno (Reprovado, Em recuperação ou Aprovado.)
+    if (media < 5) {
+        console.log('Aluno reprovado.');
+    } else if (media >= 5 && media < 7) {
+        console.log('Aluno em recuperação.');
+    } else {
+        console.log('Aluno aprovado.\n');
+    }
+}
+
+var pontuacaoTotal = 0, media = 0;
 var quantidadeNotas = parseInt(prompt('Informe a quantidade de notas: '));
 
-for (i = 0; i < quantidadeNotas; i++) {
-    notaAtual = parseFloat(prompt('Insira a nota: '));
-    pontuacaoTotal = pontuacaoTotal + notaAtual;
-    console.log('Pontuação total: ' + pontuacaoTotal.toFixed(1));
-}
+pontuacaoTotal = receberNotas(quantidadeNotas);
+media = calcularMedia(pontuacaoTotal, quantidadeNotas);
 
-media = (pontuacaoTotal / quantidadeNotas);
-
-console.log('\nA média do aluno foi: ' + media.toFixed(1));
-
-if (media < 5) {
-    console.log('Aluno reprovado.');
-} else if (media >= 5 && media < 7) {
-    console.log('Aluno em recuperação.');
-} else {
-    console.log('Aluno aprovado.\n');
-}
+console.log('\nA média das notas é de: ' + media.toFixed(1));
+retornarStatusAluno(media);
