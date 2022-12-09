@@ -8,6 +8,7 @@ public class Main {
         int numeroFuncao;
         boolean isExecutandoFuncaoPrincipal = true;
         boolean isExecutandoFuncaoUm = true;
+        boolean isExecutandoFuncaoDois = true;
         char operador;
         float operandoUm, operandoDois = 0;
 
@@ -20,7 +21,7 @@ public class Main {
 
         do {
             switch (numeroFuncao) {
-                case 1: {
+                case 1 -> {
                     Calculadora calculadora = new Calculadora();
 
                     System.out.println("Insira o primeiro número:");
@@ -47,8 +48,8 @@ public class Main {
                         operandoUm = scanner.nextFloat();
 
                         if (operandoUm == 01) {
-                            System.out.println("\nCalculadora encerrada!");
                             isExecutandoFuncaoUm = false;
+                            System.out.println("\nCalculadora encerrada!");
                         } else {
                             System.out.println("Insira o operador (+ - * /): ");
                             operador = scanner.next().charAt(0);
@@ -65,16 +66,37 @@ public class Main {
                         }
                     } while (isExecutandoFuncaoUm);
                 }
+                case 2 -> {
+                    Calculadora calculadora = new Calculadora();
 
-                // inserção de mais funções a partir daqui
+                    System.out.println("Insira o número: ");
+                    operandoUm = scanner.nextFloat();
+                    System.out.println("Informe o número limite de multiplicador: ");
+                    operandoDois = scanner.nextFloat();
+
+                    do {
+                        calculadora.retornarTabuada(operandoUm, operandoDois);
+
+                        System.out.println("Insira o número (01 para interromper): ");
+                        operandoUm = scanner.nextFloat();
+
+                        if (operandoUm == 01) {
+                            isExecutandoFuncaoDois = false;
+                            System.out.println("Calculadora de tabuadas encerrada!");
+                        } else {
+                            System.out.println("Informe o número limite de multiplicador: ");
+                            operandoDois = scanner.nextFloat();
+                        }
+                    } while (isExecutandoFuncaoDois);
+                }
             }
 
-            System.out.println("\nEscolha uma função (0 para interromper):");
+            System.out.println("\nEscolha uma função (01 para interromper):");
             System.out.println("1 - Calculadora simples (+ - * / ¬)");
             System.out.println("2 - Exibição de tabuada");
             numeroFuncao = scanner.nextInt();
 
-            if (numeroFuncao == 0) {
+            if (numeroFuncao == 01) {
                 System.out.println("\nAplicação encerrada!");
                 isExecutandoFuncaoPrincipal = false;
             }

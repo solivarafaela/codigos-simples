@@ -17,4 +17,10 @@ public class Calculadora {
     public float dividir (float operandoUm, float operandoDois) {
         return operandoUm / operandoDois;
     }
+
+    public void retornarTabuada (float operandoUm, float operandoDois) {
+        for (int i = 0; i <= operandoDois; i++) {
+            System.out.println(operandoUm + " x " + i + " = " + (operandoUm * i));
+        }
+    }
 }
