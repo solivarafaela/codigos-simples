@@ -1,3 +1,5 @@
+//Recebe e calcula a média de um aluno, retornando seu status ao final.
+
 var prompt = require('prompt-sync');
 var prompt = prompt();
 
