@@ -18,7 +18,7 @@ function calcularMedia(pontuacaoTotal, quantidadeNotas) { //Retorna o calculo da
     return media = (pontuacaoTotal / quantidadeNotas);
 }
 
-function retornarStatusAluno(media) { //Retorna o estado do aluno (Reprovado, Em recuperação ou Aprovado.)
+function retornarStatusAluno(media) { //Retorna o estado do aluno (Reprovado, Em recuperação ou Aprovado).
     if (media < 5) {
         return 'Aluno reprovado.';
     } else if (media >= 5 && media < 7) {

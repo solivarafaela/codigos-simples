@@ -1,3 +1,5 @@
+//Retorna a viabilidade de uma viagem e seu possível custo.
+
 var prompt = require('prompt-sync');
 var prompt = prompt();
 

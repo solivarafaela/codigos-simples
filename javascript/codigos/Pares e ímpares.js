@@ -4,7 +4,7 @@ var prompt = require('prompt-sync');
 var prompt = prompt();
 
 
-function classificarNumero(numero) {
+function classificarNumero(numero) { //Retorna se o número é ímpar ou par.
     if (numero === 0) {
         return 'Esse número é par.';
     } else {
